@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <style>
-        table, th, td {
-    border:1px solid black;
-    }
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
     </style>
-    
+
+
+
     <table>
         <tr>
             <th>Full Name</th>
@@ -23,16 +29,38 @@
             <th>Team Name</th>
         </tr>
         <% data.forEach((data, index) => { %>
-            <% const arr2 = teamName[index] %> 
-             <tr>
-                 <td><%= data.full_name %></td>
-                 <td><%= data.email %></td>
-                 <td><%= data.number %></td>
-                 <td><%= data.city %></td>
-                 <td><%= data.url %></td>
-                 <td><%= arr2 %> </td>
-             </tr>
-         <%  }) %>
+            <% const arr2 = teamName[index] %>
+                <tr>
+                    <td>
+                        <%= data.full_name %>
+                    </td>
+                    <td>
+                        <%= data.email %>
+                    </td>
+                    <td>
+                        <%= data.number %>
+                    </td>
+                    <td>
+                        <%= data.city %>
+                    </td>
+                    <td>
+                        <%= data.url %>
+                    </td>
+                    <td>
+                        <%= arr2 %>
+                    </td>
+                </tr>
+                <%  }) %>
     </table>
+    <div>
+
+        <button onclick="myFunction()">Click to load</button>
+        <script>
+            function myFunction() {
+                let table = document.getElementById('tableClass')
+                table.style.display = 'Block'
+            }
+        </script>
 </body>
+
 </html>
